@@ -1,13 +1,14 @@
 
 # Web-corporativa
 
-# Web Corporativa de [Nom de l'Empresa]
+# Web Corporativa de FOODLOGISTICS
 
 Aquesta és la web corporativa de [Nom de l'Empresa], una empresa fictícia dedicada a [descripció breu de l'empresa] dins el mòdul *Projecte Intermodular*.
 
 ## Demostració
 
-[🌐 URL de la web](https://[usuari].github.io/[nom-del-repositori])
+[🌐 URL de la web](https://joanosunaa.github.io/Web-corporativa/)
+[Visitants](https://statcounter.com/)
 
 ## Tecnologies Utilitzades
 
