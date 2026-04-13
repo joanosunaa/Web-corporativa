@@ -49,6 +49,7 @@
                     <p>Gestió d'estocs amb control de temperatura intel·ligent.</p>
                 </div>
                 <div class="card">
+                    <div class="icon">🍎</div>
                     <h3>Distribució Capil·lar</h3>
                     <p>Arribem a qualsevol punt amb la màxima puntualitat.</p>
                 </div>
@@ -65,18 +66,22 @@
         <section id="contacte" class="contact">
             <div class="contact-card">
                 <h2>Contacta amb nosaltres</h2>
-                <form>
+                <form action="#">
                     <div class="form-group">
-                        <input type="text" id="nom" placeholder="Nom complet" required>
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" placeholder="Nom complet" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="Correu electrònic" required>
+                        <label for="email">Correu electrònic</label>
+                        <input type="email" id="email" name="email" placeholder="correu@exemple.com" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" id="telefon" placeholder="Telèfon de contacte">
+                        <label for="telefon">Telèfon de contacte</label>
+                        <input type="tel" id="telefon" name="telefon" placeholder="600 000 000">
                     </div>
                     <div class="form-group">
-                        <textarea id="missatge" rows="4" placeholder="Com et podem ajudar?" required></textarea>
+                        <label for="missatge">Missatge</label>
+                        <textarea id="missatge" name="missatge" rows="4" placeholder="Com et podem ajudar?" required></textarea>
                     </div>
                     <button type="submit" class="btn-submit">Enviar petició</button>
                 </form>
@@ -87,19 +92,19 @@
     <footer>
         <p>&copy; 2026 FoodLogistic S.A. - Excel·lència en Logística Alimentària.</p>
     </footer>
-<!-- Default Statcounter code for FOODLOGISTIC
-https://joanosunaa.github.io/Web-corporativa/ -->
-<script type="text/javascript">
-var sc_project=13214957; 
-var sc_invisible=1; 
-var sc_security="f2cc9ac7"; 
-</script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js" async></script>
-<noscript><div class="statcounter"><a title="Web Analytics"
-href="https://statcounter.com/" target="_blank"><img class="statcounter"
-src="https://c.statcounter.com/13214957/0/f2cc9ac7/1/" alt="Web Analytics"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
-</body>
+
+    <script type="text/javascript">
+        var sc_project=13214957; 
+        var sc_invisible=1; 
+        var sc_security="f2cc9ac7"; 
+    </script>
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+        <div class="statcounter">
+            <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
+                <img class="statcounter" src="https://c.statcounter.com/13214957/0/f2cc9ac7/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade">
+            </a>
+        </div>
+    </noscript>
+    </body>
 </html>
