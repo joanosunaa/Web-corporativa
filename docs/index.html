@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
@@ -7,30 +7,22 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Estils per als elements legals Operació Escut Digital */
+        /* Estils per als elements legals */
         .form-legal { margin: 20px 0; text-align: left; font-size: 0.85rem; color: #444; font-family: 'Inter', sans-serif; }
         .form-legal label { display: block; margin-bottom: 10px; cursor: pointer; }
         .form-legal input { width: auto !important; display: inline-block !important; margin-right: 10px; }
-        
-        /* Secció de textos legals al final (Tot en un) */
-        .legal-content-section { padding: 60px 20px; background: #f4f4f4; border-top: 1px solid #ddd; font-family: 'Inter', sans-serif; font-size: 0.85rem; line-height: 1.4; }
-        .legal-box { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
-        .legal-item { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .legal-item h3 { color: #2c3e50; border-bottom: 2px solid #27ae60; padding-bottom: 5px; margin-top: 0; font-size: 1rem; }
-
-        /* Banner de Cookies */
-        #cookie-banner {
-            position: fixed; bottom: 0; left: 0; width: 100%; background: #2c3e50; color: white; 
-            padding: 20px; display: none; z-index: 9999; text-align: center; font-family: 'Inter', sans-serif;
-        }
-        .btn-cookie { padding: 8px 20px; margin: 5px 10px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        .btn-cookie.accept { background-color: #27ae60; color: white; }
-        .btn-cookie.reject { background-color: #e74c3c; color: white; }
         
         footer { padding: 30px; text-align: center; background: #fff; border-top: 1px solid #eee; }
         .footer-links { margin-bottom: 10px; }
         .footer-links a { margin: 0 10px; color: #27ae60; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
         .footer-links a:hover { text-decoration: underline; }
+
+        /* Banner de Cookies Estilitzat */
+        #cookie-popup {
+            position: fixed; bottom: 0; left: 0; width: 100%; background: #2c3e50; 
+            color: white; padding: 25px; z-index: 10000; box-shadow: 0 -2px 15px rgba(0,0,0,0.5); 
+            font-family: 'Inter', sans-serif; display: none;
+        }
     </style>
 </head>
 <body>
@@ -79,50 +71,39 @@
                     <div class="form-legal">
                         <label>
                             <input type="checkbox" name="privacitat" required>
-                            Accepto la <a href="#politica-privacitat">Política de Privacitat</a>.
+                            Accepto la <a href="privacitat.html">Política de Privacitat</a>.
                         </label>
                         <label>
                             <input type="checkbox" name="comercial">
-                            Autoritzo comunicacions comercials segons l'<a href="#avis-legal">Avís Legal</a>.
+                            Autoritzo comunicacions comercials segons l' <a href="avis-legal.html">Avís Legal</a>.
                         </label>
                     </div>
                     <button type="submit" class="btn-submit">Enviar petició</button>
                 </form>
             </div>
         </section>
-
-        <section id="seccio-legal" class="legal-content-section">
-            <div class="legal-box">
-                <div id="avis-legal" class="legal-item">
-                    <h3>Avís Legal</h3>
-                    <p><strong>FoodLogistic S.A.</strong><br>NIF: A12345678<br>C/ Logística 45, BCN.<br>Responsable del lloc web i de la gestió de continguts corporatius.</p>
-                </div>
-                <div id="politica-privacitat" class="legal-item">
-                    <h3>Privacitat</h3>
-                    <p>Drets ARSLOP: Pots accedir, rectificar o suprimir les teves dades enviant un correu a <strong>privacitat@foodlogistic.cat</strong>. No cedim dades a tercers.</p>
-                </div>
-                <div id="politica-cookies" class="legal-item">
-                    <h3>Cookies</h3>
-                    <p>Utilitzem cookies tècniques (necessàries) i analítiques (StatCounter) per mesurar el trànsit de la web de forma anònima.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
         <div class="footer-links">
-            <a href="#avis-legal">Avís Legal</a> | 
-            <a href="#politica-privacitat">Privacitat</a> | 
-            <a href="#politica-cookies">Cookies</a>
+            <a href="avis-legal.html">Avís Legal</a> | 
+            <a href="privacitat.html">Privacitat</a> | 
+            <a href="cookies.html">Cookies</a>
         </div>
-        <p>&copy; 2026 FoodLogistic S.A. - Excel·lència en Logística Alimentària.</p>
+        <p>&copy; 2026 LOGISTICA ASPETRANS SL - Excel·lència en Logística Alimentària.</p>
     </footer>
 
-    <div id="cookie-banner">
-        <p>Aquesta web utilitza cookies per millorar la teva experiència. Pots llegir més a la nostra <a href="#politica-cookies" style="color: #3498db; text-decoration: underline;">Política de Cookies</a>.</p>
-        <div class="cookie-btns">
-            <button onclick="acceptCookies()" class="btn-cookie accept">Acceptar totes</button>
-            <button onclick="rejectCookies()" class="btn-cookie reject">Rebutjar</button>
+    <div id="cookie-popup">
+        <div style="max-width: 1100px; margin: auto; display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <p style="margin-bottom: 20px; font-size: 0.95rem; line-height: 1.5;">
+                Utilitzem cookies pròpies i de tercers per a fins analítics i per mostrar-li publicitat personalitzada. 
+                Pot acceptar totes les cookies polsant el botó "Acceptar" o configurar-les a la nostra 
+                <a href="cookies.html" style="color: #27ae60; text-decoration: underline;">Política de Cookies</a>.
+            </p>
+            <div style="display: flex; gap: 15px;">
+                <button onclick="acceptCookies()" style="background: #27ae60; color: white; border: none; padding: 12px 30px; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 1rem;">Acceptar totes</button>
+                <button onclick="rejectCookies()" style="background: #7f8c8d; color: white; border: none; padding: 12px 30px; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 1rem;">Rebutjar</button>
+            </div>
         </div>
     </div>
 
@@ -130,16 +111,18 @@
         var sc_project=13214957; var sc_invisible=1; var sc_security="f2cc9ac7"; 
         
         function acceptCookies() {
-            document.getElementById('cookie-banner').style.display = 'none';
-            localStorage.setItem('foodlogistic_cookies', 'true');
+            document.getElementById('cookie-popup').style.display = 'none';
+            localStorage.setItem('aspetrans_cookies_accepted', 'true');
         }
+
         function rejectCookies() {
-            document.getElementById('cookie-banner').style.display = 'none';
-            localStorage.setItem('foodlogistic_cookies', 'false');
+            document.getElementById('cookie-popup').style.display = 'none';
+            localStorage.setItem('aspetrans_cookies_accepted', 'false');
         }
+
         window.onload = function() {
-            if (!localStorage.getItem('foodlogistic_cookies')) {
-                document.getElementById('cookie-banner').style.display = 'block';
+            if (!localStorage.getItem('aspetrans_cookies_accepted')) {
+                document.getElementById('cookie-popup').style.display = 'block';
             }
         };
     </script>
