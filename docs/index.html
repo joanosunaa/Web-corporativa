@@ -6,6 +6,66 @@
     <title>FoodLogistic S.A. | Frescura en Moviment</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estils afegits per a la Operació Escut Digital */
+        .form-legal {
+            margin: 20px 0;
+            text-align: left;
+            font-size: 0.85rem;
+            color: #444;
+        }
+        .form-legal label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .form-legal input {
+            width: auto !important;
+            display: inline-block !important;
+            margin-right: 10px;
+        }
+        .footer-links {
+            margin-bottom: 15px;
+        }
+        .footer-links a {
+            color: #555;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+            color: #27ae60;
+        }
+        /* Banner de Cookies */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            display: none;
+            z-index: 9999;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+            font-family: 'Inter', sans-serif;
+        }
+        .cookie-btns {
+            margin-top: 15px;
+        }
+        .btn-cookie {
+            padding: 8px 25px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn-cookie.accept { background-color: #27ae60; color: white; }
+        .btn-cookie.reject { background-color: #e74c3c; color: white; }
+    </style>
 </head>
 <body>
 
@@ -83,6 +143,18 @@
                         <label for="missatge">Missatge</label>
                         <textarea id="missatge" name="missatge" rows="4" placeholder="Com et podem ajudar?" required></textarea>
                     </div>
+
+                    <div class="form-legal">
+                        <label>
+                            <input type="checkbox" name="privacitat" required>
+                            He llegit i accepto la <a href="privacitat.html" target="_blank">Política de Privacitat</a>.
+                        </label>
+                        <label>
+                            <input type="checkbox" name="comercial">
+                            Autoritzo l'enviament de comunicacions comercials segons l'<a href="avis-legal.html" target="_blank">Avís Legal</a>.
+                        </label>
+                    </div>
+
                     <button type="submit" class="btn-submit">Enviar petició</button>
                 </form>
             </div>
@@ -90,13 +162,41 @@
     </main>
 
     <footer>
+        <div class="footer-links">
+            <a href="avis-legal.html">Avís Legal</a> | 
+            <a href="privacitat.html">Privacitat</a> | 
+            <a href="cookies.html">Cookies</a>
+        </div>
         <p>&copy; 2026 FoodLogistic S.A. - Excel·lència en Logística Alimentària.</p>
     </footer>
+
+    <div id="cookie-banner">
+        <p>Aquesta web utilitza cookies per millorar la teva experiència. Pots acceptar-les o configurar-les a la nostra <a href="cookies.html" style="color: #3498db;">Política de Cookies</a>.</p>
+        <div class="cookie-btns">
+            <button onclick="acceptCookies()" class="btn-cookie accept">Acceptar totes</button>
+            <button onclick="rejectCookies()" class="btn-cookie reject">Rebutjar</button>
+        </div>
+    </div>
 
     <script type="text/javascript">
         var sc_project=13214957; 
         var sc_invisible=1; 
         var sc_security="f2cc9ac7"; 
+        
+        // Lògica del Banner de Cookies
+        function acceptCookies() {
+            document.getElementById('cookie-banner').style.display = 'none';
+            localStorage.setItem('cookiesFoodLogistic', 'accepted');
+        }
+        function rejectCookies() {
+            document.getElementById('cookie-banner').style.display = 'none';
+            localStorage.setItem('cookiesFoodLogistic', 'rejected');
+        }
+        window.addEventListener('load', function() {
+            if (!localStorage.getItem('cookiesFoodLogistic')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+        });
     </script>
     <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
     <noscript>
@@ -106,5 +206,5 @@
             </a>
         </div>
     </noscript>
-    </body>
+</body>
 </html>
