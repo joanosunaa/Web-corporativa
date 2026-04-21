@@ -90,7 +90,9 @@
             <a href="privacitat.html">Privacitat</a> | 
             <a href="cookies.html">Cookies</a>
         </div>
-        <p>&copy; 2026 LOGISTICA ASPETRANS SL - Excel·lència en Logística Alimentària.</p>
+        <p><strong>FoodLogistic S.A.</strong> | NIF: A08123456</p>
+        <p>Carrer de la Teixidora, núm. 13, 08302 Mataró (Barcelona)</p>
+        <p>&copy; 2026 FoodLogistic S.A. - Excel·lència en Logística Alimentària.</p>
     </footer>
 
     <div id="cookie-popup">
@@ -112,16 +114,16 @@
         
         function acceptCookies() {
             document.getElementById('cookie-popup').style.display = 'none';
-            localStorage.setItem('aspetrans_cookies_accepted', 'true');
+            localStorage.setItem('foodlogistic_cookies_accepted', 'true');
         }
 
         function rejectCookies() {
             document.getElementById('cookie-popup').style.display = 'none';
-            localStorage.setItem('aspetrans_cookies_accepted', 'false');
+            localStorage.setItem('foodlogistic_cookies_accepted', 'false');
         }
 
         window.onload = function() {
-            if (!localStorage.getItem('aspetrans_cookies_accepted')) {
+            if (!localStorage.getItem('foodlogistic_cookies_accepted')) {
                 document.getElementById('cookie-popup').style.display = 'block';
             }
         };
